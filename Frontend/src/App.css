@@ -1,6 +1,6 @@
 /* Apply a black background to the entire app */
 body {
-  background-color: rgb(9, 8, 8);
+  background-color: #FFD65A;
   color: FBFBFB;
   font-family: Arial, sans-serif; /* You can choose your preferred font */
   margin: 0;
