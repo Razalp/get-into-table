@@ -4,6 +4,7 @@ import './App.css';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import ErrorPage from './pages/404/ErrorPage';
+import Table from './pages/Table/Table';
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/table" element={<Table />} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>

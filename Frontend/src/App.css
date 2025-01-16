@@ -1,8 +1,8 @@
 /* Apply a black background to the entire app */
 body {
-  background-color: #FFD65A;
+  background-color: #FAFFC5;
   color: FBFBFB;
-  font-family: Arial, sans-serif; /* You can choose your preferred font */
+  font-family: Arial, sans-serif; 
   margin: 0;
   padding: 0;
 }

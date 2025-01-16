@@ -4,39 +4,65 @@ import * as React from "react"
 import { useState } from "react"
 import { Eye, EyeOff, Lock, Mail, User } from 'lucide-react'
 
-import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { useToast } from "../../hooks/use-toast"
-import { Toaster } from "@/components/ui/toaster"
+import { Toaster  } from "@/components/ui/toaster"
+import { ToastAction } from "@/components/ui/toast"
+import { useNavigate } from "react-router-dom"
+
 
 export function AuthCard() {
   const [showPassword, setShowPassword] = useState(false)
   const { toast } = useToast()
+  const navigate = useNavigate()
+  const navigateToTable = () => {
+    navigate('/table')
+  }
+
 
   const handleSignIn = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
+  
     // Add your sign-in logic here
     toast({
       title: "Sign In Successful",
       description: "Welcome back!",
-      variant: "default",
-    })
-  }
-
+      variant: "outline",
+      action: (
+        <ToastAction altText="Goto schedule to undo">Undo</ToastAction>
+      ),
+    });
+  
+    // Delay the toast by 1 second
+    setTimeout(() => {
+     
+      navigateToTable();
+    }, 1000);
+  };
+  
   const handleSignUp = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
+  
     // Add your sign-up logic here
     toast({
-
       title: "Sign Up Successful",
       description: "Your account has been created.",
-      variant: "default",
-    })
-  }
+      variant: "outline",
+      action: (
+        <ToastAction altText="Goto schedule to undo">Undo</ToastAction>
+      ),
+    });
+    // Delay the toast by 1 second
+    setTimeout(() => {
+     
+      navigateToTable();
+    }, 1000);
+  };
+  
 
   return (
     <>
