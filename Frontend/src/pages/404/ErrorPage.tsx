@@ -1,86 +1,27 @@
-import React from 'react';
 
-const ErrorPage = () => {
+import { Link, useNavigate } from "react-router-dom"
+
+export default function ErrorPage() {
+  const navigate = useNavigate()
+  const backToHome = () => {
+    navigate("/home")
+  }
   return (
-    <div className='h-screen flex justify-center items-center'>
-      <svg
-        className="container"
-        x="0px"
-        y="0px"
-        viewBox="0 0 50 31.25"
-        height="31.25"
-        width="50"
-        preserveAspectRatio="xMidYMid meet"
-      >
-        <path
-          className="track"
-          strokeWidth="4"
-          fill="none"
-          pathLength="100"
-          d="M0.625 21.5 h10.25 l3.75 -5.875 l7.375 15 l9.75 -30 l7.375 20.875 v0 h10.25"
-        />
-        <path
-          className="car"
-          strokeWidth="4"
-          fill="none"
-          pathLength="100"
-          d="M0.625 21.5 h10.25 l3.75 -5.875 l7.375 15 l9.75 -30 l7.375 20.875 v0 h10.25"
-        />
-      </svg>
-
-      <style>{`
-        .container {
-          --uib-size: 45px;
-          --uib-color: white;
-          --uib-speed: 1.75s;
-          --uib-bg-opacity: 0.1;
-          height: 31.25px;
-          width: 50px;
-          transform-origin: center;
-          overflow: visible;
-        }
-
-        .car {
-          stroke: var(--uib-color);
-          stroke-dasharray: 100;
-          stroke-dashoffset: 0;
-          stroke-linecap: round;
-          stroke-linejoin: round;
-          animation: travel var(--uib-speed) ease-in-out infinite, fade var(--uib-speed) ease-out infinite;
-          will-change: stroke-dasharray, stroke-dashoffset;
-          transition: stroke 0.5s ease;
-        }
-
-        .track {
-          stroke-linecap: round;
-          stroke-linejoin: round;
-          stroke: var(--uib-color);
-          opacity: var(--uib-bg-opacity);
-        }
-
-        @keyframes travel {
-          0% {
-            stroke-dashoffset: 100;
-          }
-          75% {
-            stroke-dashoffset: 0;
-          }
-        }
-
-        @keyframes fade {
-          0% {
-            opacity: 0;
-          }
-          20%, 55% {
-            opacity: 1;
-          }
-          100% {
-            opacity: 0;
-          }
-        }
-      `}</style>
+    <div className="flex items-center min-h-screen px-4 py-12 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+      <div className="w-full space-y-6 text-center">
+        <div className="space-y-3">
+          <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl animate-bounce">404</h1>
+          <p className="text-gray-500">Looks like you've ventured into the unknown digital realm.</p>
+        </div>
+        <Link
+          href="#"
+          className="inline-flex h-10 items-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
+          prefetch={false}
+          onClick={backToHome}
+        >
+          Return to website
+        </Link>
+      </div>
     </div>
-  );
-};
-
-export default ErrorPage;
+  )
+}

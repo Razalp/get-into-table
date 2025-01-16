@@ -20,7 +20,7 @@ export function AuthCard() {
   const { toast } = useToast()
   const navigate = useNavigate()
   const navigateToTable = () => {
-    navigate('/table')
+    navigate('/home')
   }
 
 

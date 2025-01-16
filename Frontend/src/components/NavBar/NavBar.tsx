@@ -6,11 +6,11 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 
 const navItems = [
-  { icon: Home, label: 'Home', href: '/' },
-  { icon: Grid, label: 'Category', href: '/category' },
-  { icon: Tag, label: 'Offers', href: '/offers' },
-  { icon: ShoppingCart, label: 'Cart', href: '/cart' },
-  { icon: User, label: 'Account', href: '/account' },
+  { icon: Home, label: 'Home', to: '/' },
+  { icon: Grid, label: 'Category', to: '/category' },
+  { icon: Tag, label: 'Offers', to: '/offers' },
+  { icon: ShoppingCart, label: 'Cart', to: '/cart' },
+  { icon: User, label: 'Account', to: '/account' },
 ]
 
 export default function AnimatedNavBar() {
@@ -19,10 +19,10 @@ export default function AnimatedNavBar() {
   return (
     <nav className="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-white rounded-full shadow-lg px-4 py-2">
       <ul className="flex items-center space-x-6">
-        {navItems.map(({ icon: Icon, label, href }) => (
+        {navItems.map(({ icon: Icon, label, to }) => (
           <li key={label}>
             <Link
-              href={href}
+              to={to}
               className={`flex flex-col items-center ${
                 activeItem === label ? 'text-blue-500' : 'text-gray-500'
               }`}
@@ -50,4 +50,3 @@ export default function AnimatedNavBar() {
     </nav>
   )
 }
-
