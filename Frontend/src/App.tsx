@@ -12,6 +12,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        
         <Route path="/table" element={<Table />} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<ErrorPage />} />
