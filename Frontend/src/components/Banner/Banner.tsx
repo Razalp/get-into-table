@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+
+import { useEffect, useState } from 'react';
 import Chef1 from '../../assets/Chef/Chef1.png';
 import Chef2 from '../../assets/Chef/Chef2.png';
 import Chef3 from '../../assets/Chef/Chef3.png';
