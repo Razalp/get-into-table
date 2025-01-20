@@ -22,7 +22,7 @@ const Banner = () => {
     }, []);
   
     return (
-      <div className="w-full h-[25vh]  border-b border-gray-300 relative overflow-hidden">
+      <div className="w-full h-[25vh]  border-b border-gray-300 relative overflow-hidden shadow-lg ">
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full flex justify-center items-center">
           {images.map((image, index) => (
             <div
@@ -36,7 +36,7 @@ const Banner = () => {
                     ? 'scale(0.8) translateX(100%)' 
                     : 'scale(0.8) translateX(-100%)',
                 zIndex: currentIndex === index ? 1 : 0
-              }}
+              }}  
             >
               <img
                 src={image}
